@@ -1,0 +1,113 @@
+/**
+ * This class holds information about a Basket that will be sold.
+ */
+public class Basket
+{
+    private String colour;
+    private int baseDiameter;
+    private int cost;
+    private String woolThickness;
+    
+    /**
+     * This constructs the Basket object by using user input
+     * to initialise its colour, base diameter and wool thickness.
+     */
+    public Basket(String colour, int baseDiameter, String woolThickness)
+    {
+        this.colour = colour;
+        this.baseDiameter = baseDiamter;
+        this.price = // need to work out the formula
+        this.woolThickness = woolThickness;
+    }
+    
+    // getter methods
+    
+    /**
+     * Get the colour of the Basket.
+     */
+    public String getColour()
+    {
+        return colour;
+    }
+    
+    /**
+     * Get the base diameter of the Basket.
+     */
+    public int getBaseDiameter()
+    {
+        return baseDiameter;
+    }
+    
+    /**
+     * Return the cost of the basket.
+     */
+    public int getCost()
+    {
+        return cost;
+    }
+    
+    /**
+     * Get the thickness of the wool used for the basket.
+     */
+    public String getWoolThickness()
+    {
+        return woolThickness;
+    }
+    
+    // setter methods
+    
+    /**
+     * Set the colour of the Basket.
+     */
+    public void setColour(String colour)
+    {
+        this.colour = colour;
+    }
+    
+    /**
+     * Set the diameter of the base of the Basket.
+     * Measured in centimetres.
+     */
+    public void setBaseDiameter(int baseDiameter)
+    {
+        this.baseDiameter = baseDiameter;
+    }
+    
+    /**
+     * Set the cost of the basket.Taking into consideration the 
+     * size of the base and the thickness of the wool, of which 
+     * there can be multiple outcomes.
+     */
+     public void setPrice()
+     {
+         double costFormula = + (baseDiameter / 2);
+         
+         if (baseDiameter != null && woolThickness != null) {
+             switch(woolThickness) {
+             case "thin": cost = 15 + costFormula;
+             break;
+             case "standard": cost = 20 + costFormula;
+             break;
+             case "thick": cost = 25 + costFormula;
+             break;
+             default: System.out.println("Error");
+             }
+         }
+     }
+     
+     /**
+      * Set the thickness of the wool.
+      * @param The thickness of the wool.
+      */
+      public void setWoolThickness(String aWoolThickness)
+      {
+          if (aWoolThickness == "thin" || 
+              aWoolThickness == "standard" ||
+              aWoolThickness == "thick") {
+                  this.woolThickness = aWoolThickness;
+          }
+          else {
+              System.out.println("The type of wool you have entered is not applicable to these baskets");
+          }
+      }
+}
